@@ -1,0 +1,40 @@
+name:                ally-invest
+version:             0.1.0.0
+github:              "evenex/ally-invest"
+license:             BSD3
+author:              "Vlad Levenfeld"
+maintainer:          "vlevenfeld@gmail.com"
+copyright:           "2020 Vlad Levenfeld"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+synopsis:            Ally Invest integration library
+category:            Finance
+description:         Please see the README on GitHub at <https://github.com/evenex/ally-invest#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- authenticate-oauth
+- http-client-tls
+- http-client
+- time
+- aeson
+- text
+- bytestring
+- safe
+
+library:
+  source-dirs: src
+
+tests:
+  ally-invest-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ally-invest
